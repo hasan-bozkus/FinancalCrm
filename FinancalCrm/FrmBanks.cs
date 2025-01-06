@@ -16,5 +16,10 @@ namespace FinancalCrm
         {
             InitializeComponent();
         }
+
+        private void FrmBanks_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
