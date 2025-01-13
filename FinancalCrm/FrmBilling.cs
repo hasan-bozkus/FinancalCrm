@@ -87,5 +87,33 @@ namespace FinancalCrm
             frm.Show();
             this.Hide();
         }
+
+        private void btnDashboardForm_Click(object sender, EventArgs e)
+        {
+            FrmDashboard frm = new FrmDashboard();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnBankProcessForm_Click(object sender, EventArgs e)
+        {
+            FrmBankProcess frm = new FrmBankProcess();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnSpendingForm_Click(object sender, EventArgs e)
+        {
+            FrmSpending frm = new FrmSpending();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnCategoryForm_Click(object sender, EventArgs e)
+        {
+            FrmCategory frm = new FrmCategory();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

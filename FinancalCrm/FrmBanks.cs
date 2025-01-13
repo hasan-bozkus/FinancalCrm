@@ -4,8 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
+using System.Web.Security;
 using System.Windows.Forms;
 using FinancalCrm.Models;
 
@@ -13,8 +16,6 @@ namespace FinancalCrm
 {
     public partial class FrmBanks : Form
     {
-
-        //FinancalCrmDbEntities veri tabanı için adı
         public FrmBanks()
         {
             InitializeComponent();
@@ -55,6 +56,39 @@ namespace FinancalCrm
             FrmBilling frm = new FrmBilling();
             frm.Show();
             this.Hide();
+        }
+
+        private void btnFrmSpending_Click(object sender, EventArgs e)
+        {
+            FrmSpending frm = new FrmSpending();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnDashboardForm_Click(object sender, EventArgs e)
+        {
+            FrmDashboard frm = new FrmDashboard();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnCategoryForm_Click(object sender, EventArgs e)
+        {
+            FrmCategory frm = new FrmCategory();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnBankProcessForm_Click(object sender, EventArgs e)
+        {
+            FrmBankProcess frm = new FrmBankProcess();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
