@@ -16,5 +16,10 @@ namespace FinancalCrm
         {
             InitializeComponent();
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

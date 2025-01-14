@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -24,20 +25,20 @@ namespace FinancalCrm
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            var kullanici = db.Users.FirstOrDefault(k => k.UserName == txtUserName.Text && k.Password == txtPassword.Text);
+            using (var db = new FinancalCrmDbEntities())
+            {
+                string userName = txtUserName.Text;
+                string password = txtPassword.Text;
 
-            if (kullanici != null)
-            {
-                
-                MessageBox.Show("Giriş Başarılı!");
-                FrmDashboard frm = new FrmDashboard();
-                frm.Show();
-                this.Hide();
-            }
-            else
-            {
-                // Giriş başarısız
-                MessageBox.Show("Hatalı kullanıcı adı veya şifre!");
+
+                var user = db.Users.Where(u => u.UserName == txtUserName.Text).FirstOrDefault();
+
+                if (user != null && user.Password == txtPassword.Text)
+                {
+                    FrmDashboard frm = new FrmDashboard();
+                    frm.Show();
+                    this.Hide();
+                }
             }
         }
     }

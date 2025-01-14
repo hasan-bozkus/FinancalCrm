@@ -88,7 +88,7 @@ namespace FinancalCrm
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }
